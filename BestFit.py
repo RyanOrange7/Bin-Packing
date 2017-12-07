@@ -15,4 +15,21 @@ class BestFit (BinPacking):
         binl.append(bestfit)
       bestfit.pack(item)
       item.setTrue()
+    self.writeOutputFile()
+
       
+  def writeOutputFile(self):      
+    file = open("BFoutput.txt","w")
+    file.write("Best Fit Bin Packing:\n")
+
+    count = 0
+    binl = self.getBinList()
+    for bin in binl:
+      s = "B" + str(count) + " = [ "
+      file.write(s)
+      for item in bin.getB():
+        s = str(item) +", " 
+        file.write(s)
+      file.write("]\n")
+      count = count + 1
+    file.close()

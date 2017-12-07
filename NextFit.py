@@ -18,6 +18,24 @@ class NextFit (BinPacking):
         bin = binl[counter]
         bin.pack(item)
         item.setTrue()
+    self.writeOutputFile()
+
+  def writeOutputFile(self):      
+    file = open("NFoutput.txt","w")
+    file.write("Next Fit Bin Packing:\n")
+
+    count = 0
+    binl = self.getBinList()
+    for bin in binl:
+      s = "B" + str(count) + " = [ "
+      file.write(s)
+      for item in bin.getB():
+        s = str(item) +", " 
+        file.write(s)
+      file.write("]\n")
+      count = count + 1
+    file.close()
+
         
   def NFdescending(self):
 	  self.descending()

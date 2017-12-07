@@ -15,4 +15,21 @@ class WorstFit (BinPacking):
           binl.append(worstfit)
       worstfit.pack(item)
       item.setTrue()
+    self.writeOutputFile()
+
       
+  def writeOutputFile(self):      
+    file = open("WFoutput.txt","w")
+    file.write("Worst Fit Bin Packing:\n")
+
+    count = 0
+    binl = self.getBinList()
+    for bin in binl:
+      s = "B" + str(count) + " = [ "
+      file.write(s)
+      for item in bin.getB():
+        s = str(item) +", " 
+        file.write(s)
+      file.write("]\n")
+      count = count + 1
+    file.close()
