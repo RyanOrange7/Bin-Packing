@@ -7,7 +7,7 @@ class Bin:
 	def __init__(self):
 	#Set B of items in the bin and cap is the capacity of the bin
 		self.B = []
-		self.cap = 10
+		self.cap = 100
 
 	def getCapacity(self):
 		return self.cap

@@ -13,7 +13,7 @@ Set = []
 i = 10
 while i < 100:
 	l = Item()
-	c = random.randint(1,8)
+	c = random.randint(1,100)
 	l.setWeight(c)
 	print(l)
 	Set.append(l)
@@ -83,15 +83,16 @@ print(NFD)
 NFD.writeOutputFile("NFDoutput.txt")
 
 
-it.setWeight(95)
-it1.setWeight(8)
-it2.setWeight(5)
-it3.setWeight(93)
-it4.setWeight(7)
-it5.setWeight(93)
+it.setWeight(10)
+it1.setWeight(93)
+it2.setWeight(95)
+it3.setWeight(5)
+it4.setWeight(91)
+it5.setWeight(8)
 it6.setWeight(7)
 stemp = [it,it1,it2,it3,it4,it5,it6]
-BF = BestFit(SetBF,BinBF)
+print(stemp)
+BF = BestFit(stemp,BinBF)
 BF.packItems()
 print("Best Fit:")
 print(BF)
