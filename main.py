@@ -13,7 +13,7 @@ Set = []
 i = 10
 while i < 100:
 	l = Item()
-	c = random.randint(0,50)
+	c = random.randint(1,10)
 	l.setWeight(c)
 	print(l)
 	Set.append(l)

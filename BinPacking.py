@@ -29,7 +29,7 @@ class BinPacking:
   def __str__(self):
     strp = "Weight of each bin: "
     for bin2 in self.BinList:
-      strp = strp + str(100 - bin2.getCapacity()) + ", "
+      strp = strp + str(10 - bin2.getCapacity()) + ", "
     return strp
 
   def __repr__(self):
