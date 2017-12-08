@@ -15,11 +15,10 @@ class WorstFit (BinPacking):
           binl.append(worstfit)
       worstfit.pack(item)
       item.setTrue()
-    self.writeOutputFile()
 
       
-  def writeOutputFile(self):      
-    file = open("WFoutput.txt","w")
+  def writeOutputFile(self, string):      
+    file = open(string,"w")
     file.write("Worst Fit Bin Packing:\n")
 
     count = 0

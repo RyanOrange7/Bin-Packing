@@ -13,7 +13,7 @@ Set = []
 i = 10
 while i < 100:
 	l = Item()
-	c = random.randint(1,10)
+	c = random.randint(1,8)
 	l.setWeight(c)
 	print(l)
 	Set.append(l)
@@ -38,11 +38,14 @@ FF = FirstFit(SetFF,BinFF)
 FF.packItems()
 print("First Fit:")
 print(FF)
+FF.writeOutputFile("FFoutput.txt")
 
 NF = NextFit(SetNF,BinNF)
 NF.packItems()
 print("Next Fit:")
 print(NF)
+NF.writeOutputFile("NFoutput.txt")
+
 
 it = Item()
 it1 = Item()
@@ -65,16 +68,20 @@ WF = WorstFit(SetWF,BinWF)
 WF.packItems()
 print("Worst Fit:")
 print(WF)
+WF.writeOutputFile("WFoutput.txt")
 
 FFD = FirstFit(SetFFD,BinFFD)
 FFD.FFdescending()
 print("First Fit Descending:")
 print(FFD)
+FFD.writeOutputFile("FFDoutput.txt")
 
 NFD = NextFit(SetNFD,BinNFD)
 NFD.NFdescending()
 print("Next Fit Descending:")
 print(NFD)
+NFD.writeOutputFile("NFDoutput.txt")
+
 
 it.setWeight(95)
 it1.setWeight(8)
@@ -88,3 +95,4 @@ BF = BestFit(SetBF,BinBF)
 BF.packItems()
 print("Best Fit:")
 print(BF)
+BF.writeOutputFile("BFoutput.txt")

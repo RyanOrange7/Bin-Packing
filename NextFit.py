@@ -5,23 +5,18 @@ from BinPacking import BinPacking
 class NextFit (BinPacking):
   def packItems(self):
     binl = self.getBinList()
-    counter = 0
-    bin = binl[counter]
+    bin = binl[0]
     for item in self.S:
       if item.getWeight() <= bin.getCapacity():
         bin.pack(item)
-        item.setTrue()
       else:
-        newbin = Bin()
-        binl.append(newbin)
-        counter = counter + 1
-        bin = binl[counter]
+        newBin = Bin()
+        binl.append(newBin)
+        bin = newBin
         bin.pack(item)
-        item.setTrue()
-    self.writeOutputFile()
 
-  def writeOutputFile(self):      
-    file = open("NFoutput.txt","w")
+  def writeOutputFile(self,string):      
+    file = open(string,"w")
     file.write("Next Fit Bin Packing:\n")
 
     count = 0

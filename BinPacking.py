@@ -6,7 +6,6 @@ class BinPacking:
     #Set S of items to be packed in Set of Bins BinList
     self.S = S
     self.BinList = [Bin()]
-    self.BinList = BinList
     
   def getBinList(self):
     return self.BinList

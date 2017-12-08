@@ -17,10 +17,9 @@ class FirstFit (BinPacking):
 			self.BinList.append(newbin)
 			newbin.pack(item)
 			item.setTrue()
-		self.writeOutputFile()
 
-	def writeOutputFile(self):			
-		file = open("FFoutput.txt","w")
+	def writeOutputFile(self,string):			
+		file = open(string,"w")
 		file.write("First Fit Bin Packing:\n")
 
 		count = 0
